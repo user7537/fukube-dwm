@@ -1,0 +1,18 @@
+#!/bin/sh
+
+BAT="/sys/class/power_supply/BAT0"
+if [ ! -d "$BAT" ]; then
+    printf "󰚥"
+    exit
+fi
+
+capacity=$(cat "$BAT/capacity")
+status=$(cat "$BAT/status")
+
+# Color logic: normal is white (\x01), charging is green (\x02)
+if [ "$status" = "Charging" ]; then
+    printf "\x02 󱐋 %s%%\x01" "$capacity"
+else
+    printf "󱐋 %s%%" "$capacity"
+fi
+

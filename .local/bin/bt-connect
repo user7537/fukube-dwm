@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# Step 1: Ensure Bluetooth is powered on
+bluetoothctl show | grep -q "Powered: no" && {
+  bluetoothctl power on
+  notify-send "Bluetooth" "Bluetooth was off. Turning it on..."
+  sleep 1
+}
+
+# Step 2: Define devices: Name | MAC
+devices="iBall MusiCube | 30:21:E9:96:18:5C
+Headphones X | AA:BB:CC:DD:EE:FF
+Keyboard Y | 11:22:33:44:55:66"
+
+# Step 3: Select device name
+choice=$(echo "$devices" | cut -d'|' -f1 | dmenu -i -p "Bluetooth device:")
+[ -z "$choice" ] && exit 1
+
+# Step 4: Get MAC from name
+mac=$(echo "$devices" | grep "$choice" | cut -d'|' -f2 | xargs)
+
+# Step 5: Check if already connected
+if bluetoothctl info "$mac" | grep -q "Connected: yes"; then
+  # Ask if user wants to disconnect
+  ans=$(printf "Yes\nNo" | dmenu -i -p "$choice already connected. Disconnect?")
+  [ "$ans" = "Yes" ] && {
+    bluetoothctl disconnect "$mac" > /dev/null
+    notify-send "Bluetooth" "Disconnected from $choice"
+    exit 0
+  }
+  notify-send "Bluetooth" "Still connected to $choice"
+  exit 0
+fi
+
+# Step 6: Attempt to connect
+notify-send "Bluetooth" "Trying to connect to $choice..."
+output=$(bluetoothctl connect "$mac")
+echo "$output" | grep -iq "successful" && {
+  notify-send "Bluetooth" "Connected to $choice"
+  exit 0
+}
+
+notify-send "Bluetooth" "Failed to connect to $choice"
+

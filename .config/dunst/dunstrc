@@ -1,0 +1,22 @@
+[global]
+font = IBMPlexMono 10
+alignment = right
+offset = (10, 30)
+background = "#141415"
+foreground = "#cdcdcd"
+padding = 10
+markup = full
+
+[urgency_low]
+frame_color = "#878787"
+timeout = 10
+
+[urgency_normal]
+frame_color = "#cdcdcd"
+timeout = 10
+
+[urgency_critical]
+frame_color = "#d8647e"
+timeout = 0
+
+

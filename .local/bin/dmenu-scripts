@@ -1,0 +1,11 @@
+#!/bin/bash
+
+chosen=$(printf "Clipboard History\nShutdown\nReboot\nBluetooth Options" | dmenu -i -p "Run:")
+
+case "$chosen" in
+  "Clipboard History") dmenu_cliphist sel ;;
+  "Shutdown") systemctl poweroff ;;
+  "Reboot") systemctl reboot ;;
+  "Bluetooth Options") ~/.local/bin/bt-connect ;;
+esac
+

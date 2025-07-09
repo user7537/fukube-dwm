@@ -1,0 +1,11 @@
+##!/bin/sh
+
+
+status=$(nmcli networking connectivity)
+
+if   [ "$status" = "full" ]; then printf "CONNECTED" 
+elif [ "$status" = "limited"]; then printf "NO INTERNET" 
+elif [ "$STATUS" = "none"]; then printf "NOT CONNECTED"
+else printf "ERROR"
+
+fi

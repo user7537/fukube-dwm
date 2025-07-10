@@ -17,7 +17,7 @@ This is a minimal setup using mostly suckless utilities that can do basically ev
 
 ---
 
-I highly doubt anyone is going to seriously use any of this, but i did spent over 2 weeks on this, so here you go.
+I highly doubt anyone is going to seriously use any of this, but i did spend over 2 weeks on this, so here you go.
 Feel free to do whatever you want with it.
 Im also going to create a github.io page on this as well, but im too tired for that rn.
 

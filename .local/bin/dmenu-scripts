@@ -1,11 +1,12 @@
 #!/bin/bash
 
-chosen=$(printf "Clipboard History\nShutdown\nReboot\nBluetooth Options" | dmenu -i -p "Run:")
+chosen=$(printf "Clipboard History\nBluetooth Options\nShutdown\nSuspend\nReboot" | dmenu -i -p "Run:")
 
 case "$chosen" in
   "Clipboard History") dmenu_cliphist sel ;;
   "Shutdown") systemctl poweroff ;;
   "Reboot") systemctl reboot ;;
   "Bluetooth Options") ~/.local/bin/bt-connect ;;
+  "Suspend") ~/.local/bin/suspend_lock.sh ;; 
 esac
 

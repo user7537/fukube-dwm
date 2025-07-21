@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+# this file only exists because i kept forgetting what the filename was.
+
 histfile="$HOME/.cache/cliphist"
 placeholder="<NEWLINE>"
 

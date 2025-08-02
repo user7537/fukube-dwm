@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Mononoki:pixelsize=14:antialias=true:autohint=true";
+static char *font = "IBMPlexMono:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 10;
 
 /*
@@ -28,6 +28,9 @@ char *vtiden = "\033[?6c";
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
 static float chscale = 1.0;
+/* Character rendering offsets in pixels */
+static short cxoffset = 0;
+static short cyoffset = 0;
 
 /*
  * word delimiter string
@@ -65,7 +68,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 1;
+static unsigned int cursorthickness = 2;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -106,13 +109,14 @@ static const char *colorname[] = {
 	"#878787",
 
 	/* 8 bright colors */
-    "#2a2a2c", 
-    "#f08097", 
-    "#9fcf7d",
-    "#ffd49f",
-    "#92b5db", 
-    "#ffe9f5", 
-    "#d1ece8", 
+"#2a2a2c" 
+"#f08097" 
+"#9fcf7d"
+"#ffd49f" 
+"#92b5db"  
+"#ffe9f5"  
+"#d1ece8"  
+"#b0b0b0"   
 	"#cdcdcd",
 
 	[255] = 0,
@@ -126,29 +130,7 @@ static const char *colorname[] = {
 
 
 /*
- * nvim-vague colors
- *   bg = "#141415",
-    fg = "#cdcdcd",
-    floatBorder = "#878787",
-    line = "#252530",
-    comment = "#606079",
-    builtin = "#b4d4cf",
-    func = "#c48282",
-    string = "#e8b589",
-    number = "#e0a363",
-    property = "#c3c3d5",
-    constant = "#aeaed1",
-    parameter = "#bb9dbd",
-    visual = "#333738",
-    error = "#d8647e",
-    warning = "#f3be7c",
-    hint = "#7e98e8",
-    operator = "#90a0b5",
-    keyword = "#6e94b2",
-    type = "#9bb4bc",
-    search = "#405065",
-    plus = "#7fa563",
-    delta = "#f3be7c",
+ * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 258;

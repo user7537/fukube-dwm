@@ -12,7 +12,10 @@ This is a minimal setup using mostly suckless utilities that can do basically ev
 - app/scripts manager : dmenu
 - Editor              : neovim
 - Font                : IBM Plex
-- Colorscheme         : *vague for nvim* by vague2k
+- Colorscheme         : neovim : https://github.com/"tahayvr/matteblack.nvim"
+                        others: *vague* by vague2k (yes I edited everything manually)
+- Wallpaper(s)        : Currently github.com/zhichaoh/catppuccin-wallpapers/blob/main/waves/cat-waves.png
+                        used to be [this](github.com/zhichaoh/catppuccin-wallpapers/blob/main/waves/cat-waves.png) but then I moved in to live with people so yeah.
 - Firefox             : *[Cascade](https://github.com/cascadefox/cascade/tree/main)* by cascadefox
 
 ---

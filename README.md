@@ -12,7 +12,7 @@ This is a minimal setup using mostly suckless utilities that can do basically ev
 - Editor              : neovim
 - Font                : SF Pro (Text/Mono)
 - 
-- Colorscheme         : neovim : https://github.com/"tahayvr/matteblack.nvim"
+- Colorscheme         : neovim: https://github.com/tahayvr/matteblack.nvim
                         others: *vague* by vague2k (yes I enetered all the colors manually)
 - Wallpaper(s)        : Currently [this](https://github.com/zhichaoh/catppuccin-wallpapers/blob/main/waves/cat-waves.png),
                         used to be [this](https://gruvbox-wallpapers.pages.dev/wallpapers/anime/gruvbox_girl.png) but then I moved in to live with people so yeah.
